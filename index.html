@@ -32,7 +32,7 @@
 
     <section id="encomenda">
         <h2>Encomendar</h2>
-        <form action="enviar_pedido.php" method="post">
+        <form action="enviar_pedido.php" method="post" id="form-encomenda">
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" required>
             <div>
@@ -46,7 +46,8 @@
             </div>
             <label for="quantidade">Quantidade de Brownies:</label>
             <input type="number" id="quantidade" name="quantidade" min="1" required>
-            <button type="submit">Enviar Pedido</button>
+            <button type="submit" id="enviar">Enviar Pedido</button>
+            <p id="pedido-enviado" style="display: none;">Pedido Enviado!</p>
         </form>
     </section>
 
@@ -58,6 +59,13 @@
     <footer>
         <p>&copy; 2024 Brownies Deliciosos</p>
     </footer>
+
+    <script>
+        document.getElementById('form-encomenda').addEventListener('submit', function(event) {
+            document.getElementById('pedido-enviado').style.display = 'block';
+            event.preventDefault(); // Evita o envio padrão do formulário
+        });
+    </script>
 </body>
 
 </html>
