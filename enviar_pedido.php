@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mail($destinatario, $assunto, $mensagem);
 
     // Redirecionamento para página de confirmação
-    header("Location: confirmacao.html");
+    header("Location: confirmacao.php");
     exit;
 }
 ?>
